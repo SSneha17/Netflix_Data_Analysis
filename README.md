@@ -4,11 +4,15 @@
 This project demonstrates an **end-to-end data pipeline** for processing Netflix data using **Azure and Databricks**. It follows the **Medallion Architecture** (Bronze, Silver, Gold) on **Azure Data Lake Storage (ADLS)** and utilizes **Azure Data Factory (ADF)**, **Databricks**, **Delta Live Tables**, and **Databricks Autoloader** for seamless data ingestion, transformation, and orchestration.  
 
 ## 🏗 Architecture  
+
+  
+  ![image](https://github.com/user-attachments/assets/f0794d38-951c-4217-9a3f-146b7902a473)
+
 1. **Data Ingestion (Bronze Layer)**
    - Source: GitHub repository containing Netflix data.  
    - Tool: **Azure Data Factory (ADF)** pipelines pull data from GitHub and load it into the **Bronze layer** on **ADLS**.
    - **Linked services** connect **GitHub → ADF** and **ADF → ADLS Bronze**.  
-   - **Databricks Autoloader** is used to incrementally load new files into the **Bronze Layer**, reducing manual ingestion efforts.  
+   - **Databricks Autoloader** is used to incrementally load new files into the **Bronze Layer**, reducing manual ingestion efforts.
 
 2. **Data Processing & Transformation (Silver Layer)**
    - **Databricks Access Connector** links ADLS to Databricks.  
@@ -19,6 +23,9 @@ This project demonstrates an **end-to-end data pipeline** for processing Netflix
    - Transformed data is further aggregated in **Delta Live Tables**.  
    - **Unity Catalog** is used for data governance & organization.  
    - **Databricks Workflows** schedule and orchestrate jobs.  
+
+![image](https://github.com/user-attachments/assets/487f5bc2-5500-42b5-8696-21f94fdff725)
+
 
 ## 🛠 Technologies Used  
 - **Azure Data Lake Storage (ADLS)** – Storage for Bronze, Silver, and Gold layers.  
